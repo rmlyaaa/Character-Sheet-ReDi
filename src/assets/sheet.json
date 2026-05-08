@@ -1,0 +1,137 @@
+{
+  "name": "Златовласка",
+  "portrait_url": "",
+  "data": {
+    "attributes": {
+      "strength": 8,
+      "agility": 15,
+      "reaction": 10,
+      "endurance": 12,
+      "perception": 12,
+      "intelligence": 12,
+      "charisma": 10,
+      "willpower": 8,
+      "power": 0
+    },
+    "skills": {
+      "applied": [
+        {
+          "id": "lockpicking",
+          "name": "Взлом",
+          "level": 3,
+          "attribute": "intelligence"
+        }
+      ],
+      "survival": [
+        {
+          "id": "stealth",
+          "name": "Скритність",
+          "level": 4,
+          "attribute": "agility"
+        }
+      ],
+      "control": [
+        {
+          "id": "hacking",
+          "name": "Хаккинг",
+          "level": 2,
+          "attribute": "intelligence"
+        }
+      ],
+      "social": [
+        {
+          "id": "dancing",
+          "name": "Танцы",
+          "level": 1,
+          "attribute": "charisma"
+        }
+      ],
+      "combat": [
+        {
+          "id": "bow",
+          "name": "Лук",
+          "level": 1,
+          "attribute": "reaction"
+        }
+      ],
+      "passive": [
+        {
+          "id": "light_armor",
+          "name": "Легкая броня",
+          "level": 0,
+          "attribute": "endurance"
+        }
+      ]
+    },
+    "body": {
+      "leftArm": {
+        "current": 2,
+        "max": 2,
+        "armorId": "armor_arms"
+      },
+      "head": {
+        "current": 1,
+        "max": 1,
+        "armorId": "armor_helmet"
+      },
+      "rightArm": {
+        "current": 2,
+        "max": 2,
+        "armorId": "armor_arms"
+      },
+      "leftLeg": {
+        "current": 2,
+        "max": 2,
+        "armorId": "armor_legs"
+      },
+      "torso": {
+        "current": 1,
+        "max": 2,
+        "armorId": "armor_torso"
+      },
+      "rightLeg": {
+        "current": 2,
+        "max": 2,
+        "armorId": "armor_legs"
+      }
+    },
+    "armor": [
+      {
+        "id": "armor_helmet",
+        "name": "Шлем",
+        "defense": 3,
+        "critCurrent": 1,
+        "critMax": 1,
+        "bodyParts": ["head"],
+        "equipped": true
+      },
+      {
+        "id": "armor_torso",
+        "name": "Торс",
+        "defense": 10,
+        "critCurrent": 0,
+        "critMax": 2,
+        "bodyParts": ["torso"],
+        "equipped": true
+      },
+      {
+        "id": "armor_arms",
+        "name": "Руки",
+        "defense": 5,
+        "critCurrent": 2,
+        "critMax": 2,
+        "bodyParts": ["leftArm", "rightArm"],
+        "equipped": true
+      },
+      {
+        "id": "armor_legs",
+        "name": "Ноги",
+        "defense": 5,
+        "critCurrent": 2,
+        "critMax": 2,
+        "bodyParts": ["leftLeg", "rightLeg"],
+        "equipped": true
+      }
+    ]
+  }
+}
