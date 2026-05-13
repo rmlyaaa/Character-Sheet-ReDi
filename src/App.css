@@ -49,7 +49,7 @@
   justify-content: space-between;
   padding: 10px 0;
 
-  border-bottom: 1px solid #bcbcbc;
+  border-bottom: 2px solid #bcbcbc;
 }
 
 .point-cont {
@@ -88,8 +88,9 @@
 }
 
 .skill-cont {
-  width: 270px;
+  width: 300px;
   padding: 15px;
+  text-align: center;
 
   border: 2px solid #bcbcbc;
   border-radius: 15px;
@@ -109,4 +110,47 @@
 
 .up-count {
   color: #bcbcbc;
+}
+
+.weap-cont {
+  width: 550px;
+  height: 325px;
+  padding: 15px;
+  text-align: center;
+
+  border: 2px solid #bcbcbc;
+  border-radius: 15px;
+}
+
+.inv-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.health-cont {
+  width: 430px;
+  padding: 15px;
+  text-align: center;
+  font-size: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #e5e5e5;
+
+  border: 2px solid #bcbcbc;
+  border-radius: 15px;
+}
+
+button {
+  all: unset;
+}
+
+.button {
+  padding: 5px 10px;
+  margin-top: 10px;
+
+  cursor: pointer;
 }

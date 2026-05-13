@@ -1,6 +1,9 @@
 import { Link } from "react-router";
 import { Characteristics } from "../components/Characteristics";
 import { Skills } from "../components/Skills";
+import { Weapons } from "../components/Weapons";
+import { Inventory } from "../components/Inventory";
+import { Health } from "../components/Health";
 
 export const Character = () => {
   return (
@@ -31,6 +34,11 @@ export const Character = () => {
       <section className="stats-cont">
         <Characteristics />
         <Skills />
+        <div className="inv-cont">
+          <Weapons />
+          <Inventory />
+        </div>
+        <Health />
       </section>
     </div>
   );

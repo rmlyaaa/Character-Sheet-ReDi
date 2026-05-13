@@ -1,6 +1,7 @@
 export const Skills = () => {
   return (
     <div className="skill-cont">
+      <h5>SKILLS</h5>
       <ul className="skill-list">
         <li className="skill-item">
           <p>Stealth</p> <h4>4</h4>
@@ -13,6 +14,7 @@ export const Skills = () => {
           <p>Lockpicking</p> <h4>3</h4>
         </li>
       </ul>
+      <button className="button"> + Add Skill </button>
     </div>
   );
 };
