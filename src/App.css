@@ -90,7 +90,9 @@
 .skill-cont {
   width: 300px;
   padding: 15px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   border: 2px solid #bcbcbc;
   border-radius: 15px;
@@ -98,6 +100,7 @@
 
 .skill-list {
   list-style: none;
+  width: 100%;
 }
 
 .skill-item {
@@ -116,7 +119,9 @@
   width: 550px;
   height: 325px;
   padding: 15px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   border: 2px solid #bcbcbc;
   border-radius: 15px;
@@ -149,8 +154,57 @@ button {
 }
 
 .button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
   padding: 5px 10px;
   margin-top: 10px;
 
   cursor: pointer;
+}
+
+.icon {
+  display: block;
+
+  stroke: #bcbcbc;
+  height: 30px;
+  width: 30 px;
+
+  cursor: pointer;
+}
+
+.info-head {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-window {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 24px;
+  border-radius: 16px;
+  min-width: 280px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+}
+
+.char-cont {
+  display: flex;
+  gap: 15px;
 }

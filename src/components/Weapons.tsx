@@ -1,17 +1,23 @@
-export const Weapons = () => {
+import type { Weapon } from "../types/character";
+
+import { AddButton } from "./AddButton";
+
+type WeaponProp = {
+  weapons: Weapon[];
+};
+
+export const Weapons = ({ weapons }: WeaponProp) => {
   return (
     <div className="weap-cont">
       <h5>WEAPONS</h5>
       <ul className="skill-list">
-        <li className="skill-item">
-          <p>Pistol</p> <h4>10 dmg</h4>
-        </li>
-        <li className="skill-item">
-          <p>Sword</p>
-          <h4>5 dmg</h4>
-        </li>
+        {weapons.map((weapon) => (
+          <li className="skill-item">
+            <p>{weapon.name}</p> <h4>{weapon.damage} dmg</h4>
+          </li>
+        ))}
       </ul>
-      <button className="button"> + Add Weapon </button>
+      <AddButton />{" "}
     </div>
   );
 };

@@ -1,42 +1,39 @@
-export const Characteristics = () => {
+import { useState } from "react";
+import { type AttributeRollResult, useDiceRoll } from "../hooks/useDiceRoll";
+
+import type { Attribute } from "../types/character";
+import RollModal from "./RollModal";
+
+type CharacteristicsProps = { attributes: Attribute[] };
+
+export const Characteristics = ({ attributes }: CharacteristicsProps) => {
+  const { rollAttribute } = useDiceRoll();
+  const [lastRoll, setLastRoll] = useState<AttributeRollResult | null>(null);
+
   return (
     <div className="char-point">
-      <div className="point">
-        <h2>8</h2>
-        <p>STR</p>
-      </div>
-      <div className="point">
-        <h2>8</h2>
-        <p>DEX</p>
-      </div>
-      <div className="point">
-        <h2>8</h2>
-        <p>REA</p>
-      </div>
-      <div className="point">
-        <h2>8</h2>
-        <p>CON</p>
-      </div>
-      <div className="point">
-        <h2>8</h2>
-        <p>PER</p>
-      </div>
-      <div className="point">
-        <h2>8</h2>
-        <p>INT</p>
-      </div>
-      <div className="point">
-        <h2>8</h2>
-        <p>CHA</p>
-      </div>
-      <div className="point">
-        <h2>8</h2>
-        <p>WP</p>
-      </div>
-      <div className="point">
-        <h2>0</h2>
-        <p>???</p>
-      </div>
+      {attributes.map((attribute) => (
+        <a
+          className="point"
+          key={attribute.name}
+          onClick={() =>
+            setLastRoll(rollAttribute(attribute.name, attribute.value))
+          }
+        >
+          <h2> {attribute.value} </h2>
+          <p> {attribute.name} </p>
+        </a>
+      ))}
+
+      {lastRoll && (
+        <RollModal onClose={() => setLastRoll(null)}>
+          <p> {lastRoll.attributeName} </p>
+          <p>
+            {lastRoll.dice} VS {lastRoll.target}
+          </p>
+          <h2> {lastRoll.success ? "Succes" : "Fail"} </h2>
+        </RollModal>
+      )}
     </div>
   );
 };

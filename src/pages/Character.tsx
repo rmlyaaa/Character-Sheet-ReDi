@@ -3,9 +3,21 @@ import { Characteristics } from "../components/Characteristics";
 import { Skills } from "../components/Skills";
 import { Weapons } from "../components/Weapons";
 import { Inventory } from "../components/Inventory";
-import { Health } from "../components/Health";
+
+import { useParams } from "react-router";
+import { mockCharacters } from "../data/mockCharacters";
+
+import { Pencil } from "lucide-react";
 
 export const Character = () => {
+  const { id } = useParams();
+
+  const character = mockCharacters.find((char) => char.id === id);
+
+  if (!character) {
+    return <p>Not found</p>;
+  }
+
   return (
     <div className="layout">
       <nav>
@@ -15,30 +27,32 @@ export const Character = () => {
       </nav>
       <section className="info-cont">
         <div>
-          <h1>
-            Goldhair <span className="up-count">/ 120</span>{" "}
-          </h1>
-          <p>Lagriss daughter / 16 yo / pirate ship captain</p>
+          <div className="info-head">
+            <h1>{character.name}</h1>
+            <button>
+              <Pencil className="icon" />
+            </button>
+          </div>
+          <p> {character.desc} </p>
         </div>
         <div className="point-cont">
           <div className="point">
-            <h2>0</h2>
+            <h2> {character.up} </h2>
             <p>UP</p>
           </div>
           <div className="point">
-            <h2>4</h2>
+            <h2> {character.dip} </h2>
             <p>DIP</p>
           </div>
         </div>
       </section>
       <section className="stats-cont">
-        <Characteristics />
-        <Skills />
+        <Characteristics attributes={character.attributes} />
+        <Skills skills={character.skills} />
         <div className="inv-cont">
-          <Weapons />
-          <Inventory />
+          <Weapons weapons={character.weapons} />
+          <Inventory inventory={character.inventory} />
         </div>
-        <Health />
       </section>
     </div>
   );
