@@ -1,5 +1,10 @@
 import { useCharacters } from "../context/CharacterContext";
+
+import { Link } from "react-router";
+
 import { Card } from "../components/Card";
+
+import { CirclePlus } from "lucide-react";
 
 export const Home = () => {
   const { characters } = useCharacters();
@@ -16,6 +21,9 @@ export const Home = () => {
             <Card character={character} key={character.id} />
           ))}
         </div>
+        <Link to="/create" className="new-char">
+          <CirclePlus className="add-icon" />
+        </Link>
       </section>
     </>
   );

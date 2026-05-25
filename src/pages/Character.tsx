@@ -5,14 +5,15 @@ import { Weapons } from "../components/Weapons";
 import { Inventory } from "../components/Inventory";
 
 import { useParams } from "react-router";
-import { mockCharacters } from "../data/mockCharacters";
 
 import { Pencil } from "lucide-react";
+import { useCharacters } from "../context/CharacterContext";
 
 export const Character = () => {
   const { id } = useParams();
+  const { characters } = useCharacters();
 
-  const character = mockCharacters.find((char) => char.id === id);
+  const character = characters.find((char) => char.id === id);
 
   if (!character) {
     return <p>Not found</p>;

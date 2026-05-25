@@ -67,6 +67,8 @@
 
   border: 2px solid #bcbcbc;
   border-radius: 15px;
+
+  cursor: pointer;
 }
 
 .layout {
@@ -109,6 +111,8 @@
   padding: 5px 0;
 
   border-bottom: 1px solid #bcbcbc;
+
+  cursor: pointer;
 }
 
 .up-count {
@@ -168,8 +172,7 @@ button {
   display: block;
 
   stroke: #bcbcbc;
-  height: 30px;
-  width: 30 px;
+  height: 24px;
 
   cursor: pointer;
 }
@@ -207,4 +210,54 @@ button {
 .char-cont {
   display: flex;
   gap: 15px;
+}
+
+.new-char {
+  margin: 25px;
+}
+
+.add-icon {
+  display: block;
+
+  stroke: #bcbcbc;
+  height: 35px;
+  width: 35px;
+
+  cursor: pointer;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+label {
+  display: flex;
+  gap: 10px;
+
+  font-size: large;
+
+  border-bottom: 1px solid #bcbcbc;
+}
+
+.info-input {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.text-input {
+  all: unset;
+}
+
+.num-input {
+  all: unset;
+
+  max-width: 30px;
+}
+
+.err {
+  color: red;
 }
