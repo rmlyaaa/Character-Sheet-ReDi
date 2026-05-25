@@ -1,7 +1,8 @@
-import { mockCharacters } from "../data/mockCharacters";
+import { useCharacters } from "../context/CharacterContext";
 import { Card } from "../components/Card";
 
 export const Home = () => {
+  const { characters } = useCharacters();
   return (
     <>
       <section className="hero">
@@ -11,7 +12,7 @@ export const Home = () => {
         </div>
         <div className="divider" />
         <div className="char-cont">
-          {mockCharacters.map((character) => (
+          {characters.map((character) => (
             <Card character={character} key={character.id} />
           ))}
         </div>
